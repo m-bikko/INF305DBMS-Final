@@ -1,0 +1,6 @@
+use('final');
+db.products.find({
+  product_id: {
+    $nin: db.order_items.distinct("product_id")
+  }
+})

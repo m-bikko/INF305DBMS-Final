@@ -1,0 +1,23 @@
+use('final');
+db.products.aggregate([
+  {
+    $group: {
+      _id: "$manufacturer_id",
+      total_products: { $sum: 1 }
+    }
+  },
+  {
+    $sort: { total_products: -1 }
+  },
+  {
+    $limit: 1
+  },
+  {
+    $lookup: {
+      from: "manufacturers",
+      localField: "_id",
+      foreignField: "manufacturer_id",
+      as: "manufacturer"
+    }
+  }
+])

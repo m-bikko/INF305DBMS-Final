@@ -1,0 +1,9 @@
+use('final');
+db.orders.aggregate([
+  {
+    $group: {
+      _id: null,
+      average_order_value: { $avg: "$TOTAL_PRICE" }
+    }
+  }
+])

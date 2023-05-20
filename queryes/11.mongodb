@@ -1,0 +1,28 @@
+use('final');
+db.order_items.aggregate([
+  {
+    $lookup: {
+      from: "products",
+      localField: "product_id",
+      foreignField: "product_id",
+      as: "product"
+    }
+  },
+  {
+    $unwind: "$product"
+  },
+  {
+    $group: {
+      _id: "$product.category_id",
+      total_revenue: { $sum: { $multiply: ["$quantity", "$price"] } }
+    }
+  },
+  {
+    $lookup: {
+      from: "categories",
+      localField: "_id",
+      foreignField: "category_id",
+      as: "category"
+    }
+  }
+])

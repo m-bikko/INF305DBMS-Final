@@ -1,0 +1,9 @@
+use('final');
+db.products.aggregate([
+  {
+    $group: {
+      _id: null,
+      total_stock: { $sum: "$STOCK" }
+    }
+  }
+])

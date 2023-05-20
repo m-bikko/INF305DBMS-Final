@@ -1,0 +1,23 @@
+use('final');
+db.order_items.aggregate([
+  {
+    $group: {
+      _id: "$product_id",
+      total_quantity: { $sum: "$quantity" }
+    }
+  },
+  {
+    $sort: { total_quantity: -1 }
+  },
+  {
+    $limit: 1
+  },
+  {
+    $lookup: {
+      from: "products",
+      localField: "_id",
+      foreignField: "product_id",
+      as: "product"
+    }
+  }
+])

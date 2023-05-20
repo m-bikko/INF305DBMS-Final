@@ -1,0 +1,23 @@
+use('final');
+db.orders.aggregate([
+  {
+    $group: {
+      _id: "$USER_ID",
+      total_spending: { $sum: "$TOTAL_PRICE" }
+    }
+  },
+  {
+    $lookup: {
+      from: "users",
+      localField: "_id",
+      foreignField: "user_id",
+      as: "user"
+    }
+  },
+  {
+    $sort: { total_spending: -1 }
+  },
+  {
+    $limit: 1
+  }
+])

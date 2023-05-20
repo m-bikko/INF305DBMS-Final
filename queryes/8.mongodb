@@ -1,0 +1,24 @@
+use('final');
+db.orders.aggregate([
+  {
+    $lookup: {
+      from: "order_items",
+      localField: "ORDER_ID",
+      foreignField: "ORDER_ID",
+      as: "order_items"
+    }
+  },
+  {
+    $match: {
+      "order_items.PRODUCT_ID": 1//here
+    }
+  },
+  {
+    $lookup: {
+      from: "users",
+      localField: "USER_ID",
+      foreignField: "USER_ID",
+      as: "user"
+    }
+  }
+])

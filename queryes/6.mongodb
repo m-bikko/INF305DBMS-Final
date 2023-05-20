@@ -1,0 +1,2 @@
+use('final');
+db.manufacturers.distinct("MANUFACTURER_ID").length

@@ -1,0 +1,23 @@
+use('final');
+db.orders.aggregate([
+  {
+    $group: {
+      _id: "$PAYMENT_METHOD_ID",
+      count: { $sum: 1 }
+    }
+  },
+  {
+    $lookup: {
+      from: "payment_methods",
+      localField: "_id",
+      foreignField: "PAYMENT_METHOD_ID",
+      as: "payment_method"
+    }
+  },
+  {
+    $sort: { count: -1 }
+  },
+  {
+    $limit: 1
+  }
+])

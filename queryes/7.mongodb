@@ -1,0 +1,12 @@
+use('final');
+db.reviews.aggregate([
+  {
+    $match: { PRODUCT_ID: 2 }//here
+  },
+  {
+    $group: {
+      _id: "$PRODUCT_ID",
+      average_rating: { $avg: "$RATING" }
+    }
+  }
+])

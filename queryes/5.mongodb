@@ -1,0 +1,2 @@
+use('final');
+db.reviews.countDocuments({ PRODUCT_ID: 1 })
