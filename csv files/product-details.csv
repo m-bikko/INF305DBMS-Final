@@ -1,0 +1,23 @@
+PRODUCT_DETAIL_ID,PRODUCT_ID,KEY1,VALUE1
+1,1,Color,Midnight
+2,1,Weight,150g
+3,2,Color,Grey
+4,2,Weight,140g
+5,3,Color,Black
+6,3,Weight,2300g
+7,4,Color,White
+8,4,Weight,2800g
+9,5,Color,Black
+10,5,Weight,12000g
+11,6,Color,Yellow
+12,6,Weight,80g
+13,7,Color,Grey
+14,7,Weight,4000g
+15,8,Color,Black
+16,8,Weight,200g
+17,9,Color,Space Grey
+18,9,Weight,180g
+19,10,Color,White
+20,10,Weight,2000g
+21,11,Color,White
+22,11,Weight,2050g

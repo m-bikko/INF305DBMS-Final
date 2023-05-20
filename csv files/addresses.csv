@@ -1,0 +1,9 @@
+ADDRESS_ID,USER_ID,STREET,CITY,STATE1,ZIP_CODE,COUNTRY
+1,1,Abai,Almaty,ALA,040096,Kazakstan
+2,2,Rozybakieva,Almaty,ALA,040091,Kazakstan
+3,3,Bauyrzhan M.,Almaty,ALA,040090,Kazakhstan
+4,4,8 auyl,Kulsary,GUW,060100,Kazakhstan
+5,5,Basenova,Atyrau,GUW,060002,Kazakhstan
+6,6,Lenin,Saint-Peter,Saint-Peter,122500,Russia
+7,7,Main Street,New York,NY,010001,USA
+8,8,Wolf Street,New York,NY,010000,USA
